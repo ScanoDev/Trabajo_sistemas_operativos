@@ -19,3 +19,11 @@ def first_fit(memory: list, req: int, index: int):
                 memory[i] = (new_base, new_size)
                 return (memory, new_base, new_size, i)
     return None
+
+
+
+def worst_fit(memory: list, req: int, index: int):
+    return None
+
+def best_fit(memory: list, req: int, index: int):
+    return None
