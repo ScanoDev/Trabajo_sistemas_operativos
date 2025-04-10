@@ -6,18 +6,19 @@ def first_fit(memory: list, req: int, index: int):
         base, size = memory[i]
         
         if(size >= req):
+            allocated_base = base
             new_base = base + req
             new_size = size - req
             
             if(new_size == 0):
                 memory.pop(i)
                 if(i == original_length - 1):
-                    return (memory, new_base, new_size, 0)
+                    return (memory, allocated_base, req, 0)
                 else:
-                    return (memory, new_base, new_size, i)
+                    return (memory, allocated_base, req, i)
             else:
                 memory[i] = (new_base, new_size)
-                return (memory, new_base, new_size, i)
+                return (memory, allocated_base, req, i)
     return None
 
 
